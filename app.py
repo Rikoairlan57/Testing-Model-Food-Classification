@@ -7,11 +7,17 @@ import requests
 from bs4 import BeautifulSoup
 
 model = load_model('save_model.h5')
-labels = {0: 'ayam_goreng', 1: 'ayam_pop', 2: 'cumi_tepung', 3: 'daging_rendang', 4: 'gulai_ikan', 5: 'gulai_tumbusu', 6: 'nasi_goreng',
-          7: 'opor_ayam', 8: 'telur_balado', 9: 'telur_dadar'}
+labels = {0: 'ayam_goreng', 1: 'ayam_pop', 2: "bakso_kuah", 3: 'cumi_tepung', 4: 'daging_rendang', 5: 'gulai_ikan', 6: 'gulai_tumbusu', 7: 'nasi_goreng',
+          8: 'opor_ayam', 9: "sate_bakar", 10: "somay", 11: "tahu_goreng", 12: 'telur_balado', 13: 'telur_dadar', 14: "tempe_goreng"}
 
-foods = ['ayam_goreng', 'ayam_pop', 'cumi_tepung', 'daging_rendang', 'gulai_ikan', 'gulai_tumbusu', 'nasi_goreng', 'opor_ayam', 'telur_balado',
-          'telur_dadar']
+foods = ['ayam_goreng', 'ayam_pop', "bakso_kuah", 'cumi_tepung', 'daging_rendang', 'gulai_ikan', 'gulai_tumbusu', 'nasi_goreng', 'opor_ayam', "sate_bakar", 
+         "somay", "tahu_goreng", 'telur_balado', 'telur_dadar', "tempe_goreng"]
+
+file_path = 'labels.txt'
+
+with open(file_path, 'w') as file:
+    for label in labels:
+        file.write(label + '\n')
 
 
 def fetch_calories(prediction):

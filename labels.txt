@@ -1,0 +1,15 @@
+ayam_goreng
+ayam_pop
+bakso_kuah
+cumi_tepung
+daging_rendang
+gulai_ikan
+gulai_tumbusu
+nasi_goreng
+opor_ayam
+sate_bakar
+somay
+tahu_goreng
+telur_balado
+telur_dadar
+tempe_goreng
