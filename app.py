@@ -7,17 +7,12 @@ import requests
 from bs4 import BeautifulSoup
 
 model = load_model('save_model.h5')
-labels = {0: 'ayam_goreng', 1: 'ayam_pop', 2: "bakso_kuah", 3: 'cumi_tepung', 4: 'daging_rendang', 5: 'gulai_ikan', 6: 'gulai_tumbusu', 7: 'nasi_goreng',
-          8: 'opor_ayam', 9: "sate_bakar", 10: "somay", 11: "tahu_goreng", 12: 'telur_balado', 13: 'telur_dadar', 14: "tempe_goreng"}
+labels = {0: 'ayam_goreng', 1: 'ayam_pop', 2: "bakso_kuah", 3: 'cumi_tepung', 4: 'daging_rendang',  5: "gado_gado", 6: 'gulai_ikan', 7: 'gulai_tumbusu',  8: "mie_goreng", 9: "mie_kuah", 10: 'nasi_goreng',
+          11: 'opor_ayam', 12: "pempek", 13: "sate_bakar", 14: "sayur_asam", 15: "somay", 16: "tahu_goreng", 17: 'telur_balado', 18: 'telur_dadar', 19: "tempe_goreng",
+          }
 
-foods = ['ayam_goreng', 'ayam_pop', "bakso_kuah", 'cumi_tepung', 'daging_rendang', 'gulai_ikan', 'gulai_tumbusu', 'nasi_goreng', 'opor_ayam', "sate_bakar", 
-         "somay", "tahu_goreng", 'telur_balado', 'telur_dadar', "tempe_goreng"]
-
-file_path = 'labels.txt'
-
-with open(file_path, 'w') as file:
-    for label in labels:
-        file.write(label + '\n')
+foods = ['ayam_oreng', 'ayam_pop', "bakso_kuah", 'cumi_tepung', 'daging_rendang',"gado_gado", 'gulai_ikan', 'gulai_tumbusu',  "mie_goreng", "mie_kuah",'nasi_goreng', 'opor_ayam',"pempek", "sate_bakar",  "sayur_asam"
+         "somay", "tahu_goreng", 'telur_balado', 'telur_dadar', "tempe_goreng",  ]
 
 
 def fetch_calories(prediction):
@@ -60,7 +55,7 @@ def run():
         if img_file is not None:
             result = processed_img(save_image_path)
             print(result)
-            st.success("**Predicted : " + result + '**')
+            st.success("**Predicted : " + result.replace('_', ' ') + '**')
             cal = fetch_calories(result)
             if cal:
                 st.warning('**' + cal + '(100 grams)**')

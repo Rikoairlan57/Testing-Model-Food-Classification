@@ -1,5 +1,5 @@
-labels = ['ayam_goreng', 'ayam_pop', "bakso_kuah", 'cumi_tepung', 'daging_rendang', 'gulai_ikan', 'gulai_tumbusu', 'nasi_goreng', 'opor_ayam', "sate_bakar", 
-         "somay", "tahu_goreng", 'telur_balado', 'telur_dadar', "tempe_goreng"]
+labels = ['ayam_oreng', 'ayam_pop', "bakso_kuah", 'cumi_tepung', 'daging_rendang',"gado_gado", 'gulai_ikan', 'gulai_tumbusu',  "mie_goreng", "mie_kuah",'nasi_goreng', 'opor_ayam',"pempek", "sate_bakar",  "sayur_asam"
+         "somay", "tahu_goreng", 'telur_balado', 'telur_dadar', "tempe_goreng",  ]
 
 file_path = 'labels.txt'
 
